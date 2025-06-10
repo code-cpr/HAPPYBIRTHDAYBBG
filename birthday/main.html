@@ -1,302 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Our Forever Moments</title>
-  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet" /> 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Pacifico', cursive;
-      background: #f3e6ff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      padding: 40px 20px;
-      color: #4b0082;
-      overflow-x: hidden;
-    }
-
-    h1 {
-      font-weight: 600;
-      margin-bottom: 30px;
-      color: #6a0dad;
-      font-size: 3rem;
-      text-align: center;
-    }
-
-    .flashcards-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 25px;
-      width: 100%;
-      max-width: 960px;
-      perspective: 1000px;
-    }
-
-    .flashcard {
-      width: 100%;
-      height: 240px;
-      cursor: pointer;
-      position: relative;
-      transform-style: preserve-3d;
-      transition: transform 0.6s, opacity 0.8s ease;
-      border-radius: 16px;
-      box-shadow: 0 8px 15px rgba(106, 13, 173, 0.25);
-      background: linear-gradient(135deg, #cbb4f9, #e1d4fc);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      box-sizing: border-box;
-      text-align: center;
-      opacity: 0;
-    }
-
-    .flashcard.flipped {
-      transform: rotateY(180deg);
-      cursor: default;
-      box-shadow: 0 8px 25px rgba(106, 13, 173, 0.5);
-    }
-
-    .front,
-    .back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 16px;
-      backface-visibility: hidden;
-      user-select: none;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 15px;
-      box-sizing: border-box;
-    }
-
-    .front {
-      background: #d9bbff;
-      color: #4b0082;
-      font-size: 1.1rem;
-      font-weight: 600;
-      line-height: 1.3;
-      border: 2px solid #6a0dad;
-      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.7);
-    }
-
-    .back {
-      background: #6a0dad;
-      transform: rotateY(180deg);
-      border: 2px solid #4b0082;
-      padding: 0;
-    }
-
-    .back img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      border-radius: 16px;
-      background: #f3e6ff;
-      pointer-events: none;
-    }
-
-    #finalMessage {
-      margin-top: 40px;
-      font-size: 1.5rem;
-      color: #6a0dad;
-      font-weight: 600;
-      display: none;
-      text-align: center;
-      max-width: 600px;
-    }
-
-    .musicplayer {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #fff3f6;
-      border: 1px solid #ffc2d1;
-      border-radius: 12px;
-      padding: 10px 15px;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      z-index: 999;
-    }
-
-    .track-info p {
-      font-size: 0.9rem;
-      margin: 0;
-      color: #c2185b;
-      font-weight: 500;
-    }
-
-    .musicplayer audio {
-      width: 140px;
-    }
-
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Sacramento&family=Quicksand:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
 
-  <h1>Our Forever Moments 💜
+  <div id="landingScreen" class="container">
+    <h1>To the One Who make us, US 💜</h1>
+    <p>It's a journey through us.</p>
+    <button class="start-btn" id="startBtn">Start Our Journey →</button>
+  </div>
+
+  <div id="memoryGallery" style="display: none;">
+    <h1>Our Forever Moments 💜</h1>
     <h3><i>"Captured through many lenses, relived throughout our memories"</i></h3>
-  </h1>
 
-  <div class="flashcards-container" id="flashcards">
-   <div class="flashcard" data-index="0">
-      <div class="front">
-        only if i was a boy , you would have been mine....beautyyyy!
+    <div class="flashcards-container" id="flashcards">
+
+      <div class="flashcard" data-index="0">
+        <div class="front">only if i was a boy , you would have been mine....beautyyyy!</div>
+        <div class="back"><img src="assets/images/pic0.jpg" /></div>
       </div>
-      <div class="back">
-        <img src="assets/images/pic0.jpg"/>
+
+      <div class="flashcard" data-index="1">
+        <div class="front">Ruru's porn</div>
+        <div class="back"><img src="assets/images/pic1.jpg" /></div>
       </div>
+
+      <div class="flashcard" data-index="2">
+        <div class="front">"Bhai Amar jokhon baby delivery hobe nahh? ..."</div>
+        <div class="back"><img src="assets/images/pic2.jpg" /></div>
+      </div>
+
+      <div class="flashcard" data-index="3">
+        <div class="front">Two kids in one frame</div>
+        <div class="back"><img src="assets/images/pic3.jpg" /></div>
+      </div>
+
+      <div class="flashcard" data-index="4">
+        <div class="front">Defensive side eyes!!??</div>
+        <div class="back"><img src="assets/images/pic4.jpg" /></div>
+      </div>
+
+      <div class="flashcard" data-index="5">
+        <div class="front">Every memory with you is a treasure I hold close to my heart.</div>
+        <div class="back"><img src="assets/images/pic5.jpg" /></div>
+      </div>
+
+      <div class="flashcard" data-index="6">
+        <div class="front">We ate and felt no crumbs....us during our prime, school life....huhhhh!</div>
+        <div class="back"><img src="assets/images/pic6.jpg" /></div>
+      </div>
+
+      <div class="flashcard" data-index="7">
+        <div class="front">Someone who makes me the happiest!</div>
+        <div class="back"><img src="assets/images/pic7.jpg" /></div>
+      </div>
+
+      <div class="flashcard" data-index="8">
+        <div class="front">You made even the toughest study hours fun and bearable.</div>
+        <div class="back"><img src="assets/images/pic8.jpg" /></div>
+      </div>
+
+      <div class="flashcard" data-index="9">
+        <div class="front">May you smile the brightest!!!</div>
+        <div class="back"><img src="assets/images/pic9.jpg" /></div>
+      </div>
+
+      <div class="flashcard" data-index="10">
+        <div class="front">We may not meet so often but Ik we don't need that to be bestfriends...</div>
+        <div class="back"><img src="assets/images/pic10.jpg" /></div>
+      </div>
+
+      <div class="flashcard" data-index="11">
+        <div class="front">Tedhi h paarrr meri hai...</div>
+        <div class="back"><img src="assets/images/pic11.jpg" /></div>
+      </div>
+
     </div>
 
-    <div class="flashcard" data-index="1">
-      <div class="front">
-        Ruru's porn
-      </div>
-      <div class="back">
-        <img src="assets/images/pic1.jpg" alt= />
-      </div>
+    <div id="finalMessage">
+      Happy Birthday Parnaaaaa!!! 💜 Here's to many more memories we'll create together!
     </div>
 
-    <div class="flashcard" data-index="2">
-      <div class="front">
-        "Bhai Amar jokhon baby delivery hobe nahh? Tokei rakhbo Amar pashe instead of the father of the baby..."
-      </div>
-      <div class="back">
-        <img src="assets/images/pic2.jpg" alt="Celebration" />
-      </div>
+    <div class="musicplayer">
+      <div class="track-info"><p>Playing: WORLD</p></div>
+      <audio id="audio" src="assets/audio/world.mp3" preload="auto" loop></audio>
     </div>
-
-    <div class="flashcard" data-index="3">
-      <div class="front">
-        Two kids in one frame
-      </div>
-      <div class="back">
-        <img src="assets/images/pic3.jpg" alt="Candid moment" />
-      </div>
-    </div>
-
-    <div class="flashcard" data-index="4">
-      <div class="front">
-        Defensive side eyes!!??
-      </div>
-      <div class="back">
-        <img src="assets/images/pic4.jpg" alt="Shining together" />
-      </div>
-    </div>
-
-    <div class="flashcard" data-index="5">
-      <div class="front">
-        Every memory with you is a treasure I hold close to my heart.
-      </div>
-      <div class="back">
-        <img src="assets/images/pic5.jpg" alt="From the heart" />
-      </div>
-    </div>
-
-    <div class="flashcard" data-index="6">
-      <div class="front">
-        We ate and felt no crumbs....us during our prime,school life....huhhhh!
-      </div>
-      <div class="back">
-        <img src="assets/images/pic6.jpg" alt="farewell" />
-      </div>
-    </div>
-
-    <div class="flashcard" data-index="7">
-      <div class="front">
-       Someone who makes me the happiest!
-      </div>
-      <div class="back">
-        <img src="assets/images/pic7.jpg" alt="Creative times" />
-      </div>
-    </div>
-
-    <div class="flashcard" data-index="8">
-      <div class="front">
-        You made even the toughest study hours fun and bearable.
-      </div>
-      <div class="back">
-        <img src="assets/images/pic8.jpg" alt="Study buddies" />
-      </div>
-    </div>
-
-    <div class="flashcard" data-index="9">
-      <div class="front">
-        May you smile the brightest!!!
-      </div>
-      <div class="back">
-        <img src="assets/images/pic9.jpg" alt="Shared songs" />
-      </div>
-    </div>
-
-    <div class="flashcard" data-index="10">
-      <div class="front">
-        We may not meet so often but Ik we don't need that to be bestfriends...
-      </div>
-      <div class="back">
-        <img src="assets/images/pic10.jpg" alt="Nature walks" />
-      </div>
-    </div>
-
-    <div class="flashcard" data-index="11">
-      <div class="front">
-        Tedhi h paarrr meri hai...
-      </div>
-      <div class="back">
-        <img src="assets/images/pic11.jpg" />
-      </div>
-    </div>
-
-  </div>
-  </div>
-
-  <div id="finalMessage">
-    Happy Birthday Parnaaaaa!!! 💜 Here's to many more memories we'll create together!
-  </div>
-
-  <div class="musicplayer">
-    <div class="track-info">
-      <p>Playing: WORLD</p>
-    </div>
-    <audio id="audio" src="assets/audio/world.mp3" preload="auto" loop></audio>
   </div>
 
   <script src="script.js"></script>
 
-  <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const shouldPlay = localStorage.getItem('playMusic');
-      const audio = document.getElementById('audio');
-
-      if (shouldPlay === 'true') {
-        // Try to play
-        const playPromise = audio.play();
-
-        if (playPromise !== undefined) {
-          playPromise
-            .then(() => {
-              console.log("Audio started");
-            })
-            .catch(error => {
-              console.warn("Autoplay blocked:", error);
-            });
-        }
-
-        // Remove flag so it doesn't autoplay every time
-        localStorage.removeItem('playMusic');
-      }
-    });
-  </script>
-
-
 </body>
+
 </html>
